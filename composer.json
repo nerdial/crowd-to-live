@@ -1,0 +1,20 @@
+{
+    "name": "nerdial/crowd-to-live",
+    "autoload": {
+        "psr-4": {
+            "Nerdial\\CrowdToLive\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nerdial"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "twig/twig": "^3.4",
+        "pecee/simple-router": "4.3.7.2",
+        "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
