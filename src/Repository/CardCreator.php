@@ -9,7 +9,7 @@ class CardCreator extends BaseRepository
     {
         $stmt = $this
             ->connection
-            ->prepare("SELECT * FROM project WHERE status=?");
+            ->prepare("SELECT * FROM project WHERE status=? limit 6");
         $stmt->execute([$status]);
         $data = [];
         foreach ($stmt->fetchAll() as $row) {
