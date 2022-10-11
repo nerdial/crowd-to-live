@@ -2,12 +2,42 @@
 
 {% block content %}
 
-    {% for project in projects %}
+    <style>
+        .hidden-items {
+            display: none;
+        }
+    </style>
 
-        {{ project | raw }}
+    {% set counter = 1 %}
+    <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4 {% if counter > 3 %} hidden-items {% endif %}">
+                {{ project | raw }}
+                {% set counter = counter + 1 %}
 
-    {% endfor %}
+            </div>
+        {% endfor %}
 
+        <button class="btn btn-info" onclick="displayItems()"> See more</button>
+
+        <br><hr>
+    </div>
+
+    <script>
+
+        function displayItems() {
+
+            let elements = document.getElementsByClassName('hidden-items')
+            Array.from(elements).forEach((el) => {
+                el.style.display = 'block';
+            });
+
+            document.getElementsByClassName('btn-info')[0].style.display = 'none'
+
+        }
+
+
+    </script>
 {% endblock %}
 
 
